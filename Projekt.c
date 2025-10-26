@@ -31,6 +31,7 @@ int main(){
             }
             teiler = teiler - 1; 
           }
+          // der Teil ist sinnlos weil man eine Zahl sucht die man ja schon kennt es würde auch reichen die eingabe einfach wieder auszugen aber ich bin zu Stolz das zu ändern. 
 }
     return 0;
 }

@@ -1,37 +1,23 @@
 #include <stdio.h>
+#include <math.h>
 
-int main(){
-    int eingabe;
-    int teiler = 60;
-    int zahl = 0;
-    int rest;
-        
+int main() {
+    int current;
+    printf("Zahl in Basis 10: ");
+    scanf("%d", &current);
+    int result_size = 0;
+    while(current > pow(60, ++result_size));
+    int result[result_size];
 
-    scanf("%dcat ", &eingabe);
-         
-    if(eingabe >= 60){
-        zahl = eingabe / teiler; 
-        rest = eingabe - (zahl * teiler); 
-        printf(" %d mal die %d und", zahl, teiler); 
+    while(current > 0) {
+        result[--result_size] = current % 60;
+        current /= 60;
+    }
 
-        while(rest > 0){
-            teiler = teiler - 1; 
-            zahl = rest / teiler; 
-            if (zahl >= 1){
-                rest = rest - (zahl * teiler);
-                printf(" %d mal die %d und", zahl, teiler); 
-            }
-           
-        }
-    }else{
-          while(zahl < 1){
-            zahl = eingabe / teiler; 
-            if(zahl == 1){
-                printf(" %d mal die %d", zahl, teiler);
-            }
-            teiler = teiler - 1; 
-          }
-          // der Teil ist sinnlos weil man eine Zahl sucht die man ja schon kennt es würde auch reichen die eingabe einfach wieder auszugen aber ich bin zu Stolz das zu ändern. 
-}
+    printf("Zahl in Basis 60: ");
+    for(int i = 0; i < sizeof(result)/sizeof(result[0]); i++) {
+        printf("%d ", result[i]);
+    }
+
     return 0;
 }
